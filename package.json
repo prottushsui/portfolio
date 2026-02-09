@@ -2,6 +2,7 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "cd App && npm install && npm run dev",
     "build": "cd App && npm install && npm run build",
