@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cd App && npm run dev",
-    "build": "cd App && npm run build",
+    "dev": "cd App && npm install && npm run dev",
+    "build": "cd App && npm install && npm run build",
     "start": "cd App && npm run preview",
     "lint": "cd App && npm run lint"
   },
