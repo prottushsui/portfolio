@@ -28,7 +28,6 @@ const MIN_WIDTH = 300;
 const MIN_HEIGHT = 200;
 
 export const WindowFrame: React.FC<WindowFrameProps> = ({
-  id: _id,
   title,
   icon,
   children,
