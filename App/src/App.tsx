@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { User, Folder, FileText, Mail, Trophy, HelpCircle, Menu } from 'lucide-react';
+import { User, Folder, FileText, Mail, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Hooks
@@ -15,8 +15,6 @@ import { ContextMenu } from '@/components/context-menu';
 import { BootSequence } from '@/components/boot';
 import { SearchBar } from '@/components/search';
 import { MobileMenu } from '@/components/mobile';
-import { Quiz } from '@/components/quiz';
-import { Leaderboard } from '@/components/leaderboard';
 
 // Content Components
 import { AboutContent } from '@/content/AboutContent';
@@ -26,7 +24,7 @@ import { ContactContent } from '@/content/ContactContent';
 
 // Types
 import type { ContextMenuItem } from '@/types';
-import { desktopIcons, leaderboardData, quizQuestions, searchItems } from '@/data/appData';
+import { desktopIcons, searchItems } from '@/data/appData';
 
 function App() {
   // State
@@ -154,18 +152,6 @@ function App() {
         return <ResumeContent />;
       case 'contact':
         return <ContactContent />;
-      case 'quiz':
-        return (
-          <Quiz 
-            questions={quizQuestions} 
-            onComplete={(score, total) => {
-              console.log(`Quiz completed: ${score}/${total}`);
-            }}
-            onClose={() => closeWindow('quiz')}
-          />
-        );
-      case 'leaderboard':
-        return <Leaderboard entries={leaderboardData} />;
       default:
         return <div>Window content not found</div>;
     }
@@ -177,8 +163,6 @@ function App() {
     { id: 'projects', title: 'Projects', icon: <Folder className="h-5 w-5" />, onClick: () => handleIconClick('projects') },
     { id: 'resume', title: 'Resume', icon: <FileText className="h-5 w-5" />, onClick: () => handleIconClick('resume') },
     { id: 'contact', title: 'Contact', icon: <Mail className="h-5 w-5" />, onClick: () => handleIconClick('contact') },
-    { id: 'quiz', title: 'Quiz', icon: <HelpCircle className="h-5 w-5" />, onClick: () => handleIconClick('quiz') },
-    { id: 'leaderboard', title: 'Leaderboard', icon: <Trophy className="h-5 w-5" />, onClick: () => handleIconClick('leaderboard') },
   ], [handleIconClick]);
 
   // Handle boot complete
