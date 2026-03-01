@@ -71,7 +71,7 @@ export function useParticles(config: ParticleConfig): UseParticlesReturn {
       let newX = particle.x + particle.vx;
       let newY = particle.y + particle.vy;
       let newVx = particle.vx;
-      let newVy = particle.vy;
+      const newVy = particle.vy;
 
       // Wrap around horizontally
       if (newX < -particle.size) newX = canvas.width + particle.size;
