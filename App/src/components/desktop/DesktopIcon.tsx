@@ -17,7 +17,6 @@ interface DesktopIconProps {
 const GRID_SIZE = 80;
 
 export const DesktopIcon: React.FC<DesktopIconProps> = ({
-  id: _id,
   title,
   icon,
   position,
